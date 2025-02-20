@@ -1,7 +1,9 @@
 @import "tailwindcss";
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
   --color-lilac: #EFECF3;
+  --color-orange: #EED9CF;
   --color-gold: #F0E8E1;
   --color-purple: #B774F0;
 
@@ -9,5 +11,4 @@
   --container-md: 48rem;/*768px;*/
   --container-lg: 64rem;/*1024px;*/
   --container-xl: 80rem;/*1280px;*/
-
 }
