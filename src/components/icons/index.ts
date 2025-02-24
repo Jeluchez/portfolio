@@ -10,3 +10,5 @@ export { NodeIcon } from './Node';
 export { ReactIcon } from './React';
 export { Sql } from './Sql';
 export { Typescript } from './Typescript';
+export { CiCd } from './CiCd';
+export { Tailwind } from './Tailwind';

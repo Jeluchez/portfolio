@@ -24,7 +24,7 @@ export const Footer = () => {
           </ul>
         </div>
         <span>
-          <button className="feedback-btn px-4 py-2" data-feedback-fish="true">Got feedback?</button>
+          <button className="tag px-4 py-2" data-feedback-fish="true">Got feedback?</button>
         </span>
       </div>
       <p className="text-center mt-4">

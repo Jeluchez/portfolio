@@ -13,6 +13,7 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
     rules: {
+      '@typescript-eslint/no-explicit-any': 'warn',
       'react/jsx-fragments': ['error', 'syntax'],
       'indent': ['error', 2],
       'eol-last': ['error', 'always'],

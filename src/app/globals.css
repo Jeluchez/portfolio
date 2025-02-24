@@ -25,6 +25,7 @@
   --color-white-400: rgb(255,255,255,.4);
   --color-surface-0: #ECE9F1;
   --color-surface-3: #F4F2F7;
+  --color-surface-2: #F1EFF5;
   
 
 
@@ -66,7 +67,7 @@
     height: 100%
   }
 }
-.feedback-btn {
+.tag {
   display: inline-flex;
   align-items: center;
   color: hsla(272deg 81% calc(82% - 12%) / 1);

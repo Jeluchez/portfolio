@@ -1,4 +1,5 @@
 import { Footer, Header } from '@/components';
+import GithubGrid from '@/components/projects/Projects';
 import { Skills } from '@/components/skill/Skills';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
@@ -26,6 +27,15 @@ export default function Home() {
         </div>
 
         <ChevronDownIcon className='floating-arrow bottom-8 absolute w-6'/>
+      </div>
+
+      {/* projects */}
+      <div className=" w-full  max-w-lg mx-auto sm:p-8 sm:pb-16 relative z-1 flex">
+        <div className='flex-2/3'>
+          <h2 className="text-xl md:text-3xl font-bold font-heading text-theme-heading transition-colors mb-8">
+          Recent projects 🧰</h2>
+          <GithubGrid/>
+        </div>
       </div>
 
       {/* about me */}
