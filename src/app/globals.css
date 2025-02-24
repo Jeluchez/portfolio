@@ -3,9 +3,11 @@
 
 :root {
   --color-lilac: #EFECF3;
+  --color-lilac-rgb: 183,116,240;
   --color-orange: #fdbb21;
   --color-purple: rgba(183,116,240);
   --color-gold: #F0E8E1;
+  --h-header: 100px;
 }
 @layer base {
   :root {
@@ -21,25 +23,26 @@
   --color-pale-lilac-800: rgb(243,239,247,.8);
   --color-pale-lilac-400: rgb(243,239,247,.4);
   --color-white-400: rgb(255,255,255,.4);
+  --color-surface-0: #ECE9F1;
+  --color-surface-3: #F4F2F7;
+  
+
 
   --container-sm: 40rem;/*640px;*/
   --container-md: 48rem;/*768px;*/
   --container-lg: 64rem;/*1024px;*/
   --container-xl: 80rem;/*1280px;*/
 }
-.overlays{
-  z-index: -1
-}
 .gradient-overlay1 {
   position: absolute;
   inset: 0; 
   pointer-events: none;
   background-color: var(--color-orange);
-  filter: blur(60px);
+  filter: blur(50px);
   top: -200px;
-  transform: scale(150%, 150%);
-  animation: expandRetract 10s linear infinite;
-  opacity: 0.3;
+  transform: scale(200%, 150%);
+  animation: expandRetract 8s linear infinite;
+  opacity: 0.2;
 }
 
 .gradient-overlay2 {
@@ -47,19 +50,40 @@
   inset: 0; 
   pointer-events: none;
   background-color: var(--color-purple);
-  filter: blur(60px);
+  filter: blur(40px);
   top: -200px;
-  transform: scale(150%, 150%);
-  opacity: 0.2;
-  animation: expandRetract 13s linear infinite;
+  transform: scale(200%, 150%);
+  opacity: 0.1;
+  animation: expandRetract 11s linear infinite;
   animation-fill-mode: both;
   transition: opacity 2s, width 2s, height 2s;  
 }
 @keyframes expandRetract {
   0%,100% {
-    height: 180px
+    height: 380px
   }
   50% {
     height: 100%
   }
 }
+.feedback-btn {
+  display: inline-flex;
+  align-items: center;
+  color: hsla(272deg 81% calc(82% - 12%) / 1);
+  background-color: rgba(var(--color-lilac-rgb), .1);
+  border-color: hsla(var(--h-primary) var(--s-primary) var(--l-primary) / 1);
+  border-radius: 4rem;
+  cursor: pointer;
+}
+.floating-arrow {
+  animation: float 0.8s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+

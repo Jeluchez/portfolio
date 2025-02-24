@@ -5,7 +5,7 @@ import { ThemeToggle,NavBar } from '@/components';
 
 export const Header = () => {
   return (
-    <header className="w-full py-4 flex items-center sticky top-0">
+    <header className="w-full h-full py-4 flex items-center sticky top-0">
       <div className="flex items-center">
         <Link href="/" className="flex  items-center">
           <Image
