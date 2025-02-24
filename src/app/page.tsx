@@ -1,4 +1,5 @@
 import { Footer, Header } from '@/components';
+import { Skills } from '@/components/skill/Skills';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 
@@ -38,7 +39,7 @@ export default function Home() {
           I’ve had the opportunity to work in a multicultural team with a huge project with many small interconnected team. Also I’ve participated in small projects when I have had to create the project from scratch.
           </p>
         </div>
-        <div className="">
+        <div>
           <Image
             src="/about.png"
             alt="about me"
@@ -49,7 +50,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* </main> */}
+      {/* skill */}
+      <Skills/>
       <Footer/>
     </div>
 
