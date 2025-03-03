@@ -8,6 +8,10 @@
   --color-purple: rgba(183,116,240);
   --color-gold: #F0E8E1;
   --h-header: 100px;
+  --color-black: #333;
+}
+html{
+  color: var(--color-black);
 }
 @layer base {
   :root {
@@ -17,7 +21,7 @@
 @theme {
   --color-lilac: #EFECF3;
   --color-orange: rgb(253,188,37);
-  --color-orange-800: rgb(253,188,37,0.8);;
+  --color-orange-800: rgb(253,188,37,0.8);
   --color-gold: #F0E8E1;
   --color-purple: rgba(183,116,240);
   --color-purple-800: rgba(183,116,240,0.2);

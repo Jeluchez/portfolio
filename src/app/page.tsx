@@ -1,7 +1,6 @@
 'use client';
 import { Footer, Header } from '@/components';
-import { careerData } from '@/components/careerHistory/careerData';
-import { CareerHistory } from '@/components/careerHistory/CareerHistory';
+import { careerData } from '@/constants/careerData';
 import { CareerHistory2 } from '@/components/careerHistory/CareerHistory2';
 import GithubGrid from '@/components/projects/Projects';
 import { Skills } from '@/components/skill/Skills';
@@ -53,8 +52,7 @@ export default function Home() {
           <p className="text-md text-theme-text md:text-lg my-6">I am a full stack software engineer working with JavaScript and on all-things-web. I passionate to create applications user-centric. I am currently based in Buenaventura, Colombia (🇨🇴).
           </p>
           <p className="text-md text-theme-text md:text-lg my-6">
-          I have over 5 year of experience years working as a full stack developer I’ve worked on the frontend, backend. And the last couple of years I’ve been more focused on technologies such as React and Nextjs.
-          I’ve had the opportunity to work in a multicultural team with a huge project with many small interconnected team. Also I’ve participated in medium projects where I have had to create the projects from design to the deployment.
+          I have over five years of experience working as a developer. In the past couple of years, I’ve been more focused on technologies such as React and Nextjs. I’ve had the opportunity to work in a multicultural team on a large project with many small, interconnected teams. I’ve also participated in medium to small projects where I had to build the entire application from design to deployment.
           </p>
         </div>
         <div>

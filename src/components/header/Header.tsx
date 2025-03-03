@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import Link from 'next/link';
-import { ThemeToggle,NavBar } from '@/components';
+import { ThemeToggle } from '@/components';
 
 export const Header = () => {
   return (
@@ -17,9 +17,6 @@ export const Header = () => {
           />
           <span className="font-bold text-lg">jeluchez.com</span>
         </Link>
-      </div>
-      <div className='ml-4'>
-        <NavBar />
       </div>
       <div className='w-auto ml-auto'>
         <ThemeToggle />

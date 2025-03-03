@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { careerData } from './careerData';
+import { careerData } from '../../constants/careerData';
 
 
 export const  CareerHistory = () =>{

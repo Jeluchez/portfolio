@@ -1,6 +1,8 @@
 'use client';
 import { useState, useRef } from 'react';
-import { motion, useInView, Variants, AnimatePresence } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
+import { bulletVariants, cardVariants, containerVariants, detailsVariants, lineVariants, listItemVariants, techBadgeVariants } from '@/constants/animationVariants';
 
 interface Job {
   company: string;
@@ -15,110 +17,6 @@ interface Job {
 interface CareerHistoryProps {
   careerData: Job[];
 }
-
-// Animation variants
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const cardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    scale: 0.95
-  },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      delay: i * 0.1,
-      type: 'spring',
-      stiffness: 100,
-      damping: 12
-    }
-  })
-};
-
-const lineVariants: Variants = {
-  hidden: { height: 0, opacity: 0 },
-  visible: {
-    height: '100%',
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: 'easeInOut'
-    }
-  }
-};
-
-const bulletVariants: Variants = {
-  initial: { scale: 0 },
-  animate: {
-    scale: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 300,
-      damping: 10
-    }
-  },
-  hover: {
-    scale: 1.2,
-    backgroundColor: '#FF7D00', // Orange color from your theme
-    transition: { duration: 0.2 }
-  }
-};
-
-const detailsVariants: Variants = {
-  collapsed: {
-    height: 0,
-    opacity: 0,
-    transition: {
-      duration: 0.3,
-      ease: 'easeInOut'
-    }
-  },
-  expanded: {
-    height: 'auto',
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-      staggerChildren: 0.1,
-      delayChildren: 0.2
-    }
-  }
-};
-
-const listItemVariants: Variants = {
-  collapsed: { opacity: 0, x: -10 },
-  expanded: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.3
-    }
-  }
-};
-
-const techBadgeVariants: Variants = {
-  collapsed: { opacity: 0, y: 10, scale: 0.8 },
-  expanded: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      delay: i * 0.05,
-      duration: 0.3
-    }
-  })
-};
 
 export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => {
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
@@ -182,19 +80,24 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
                 >
                   <div className="sm:flex sm:justify-between sm:items-start">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
-                      <p className="text-lg text-orange mt-1">{job.company} | {job.client}</p>
-                      <p className="text-gray-600 mt-1">{job.location}</p>
+                      <div className='flex'>
+                        <h3 className="text-xl font-semibold text-gray-900 mr-1">{job.title}</h3>
+                        <p className='mt-2 sm:mt-0 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium tag'>{job.period}</p>
+                      </div>
+                      <p className="text-lg text-orange mt-1">{/*job.company*/} {job.client}</p>
+                      {/* <p className="text-gray-600 mt-1">{job.location}</p> */}
                     </div>
-                    <motion.p
-                      className="mt-2 sm:mt-0 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium tag"
-                      animate={{
-                        backgroundColor: expandedJob === index ? '#FF7D00' : '#f8f8f8',
-                        color: expandedJob === index ? '#fff' : '#333'
+                    <motion.button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleExpand(index);
                       }}
+                      className="w-6 h-6"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      {job.period}
-                    </motion.p>
+                      {expandedJob === index ? <ChevronDownIcon/> : <ChevronUpIcon />}
+                    </motion.button>
                   </div>
 
                   <AnimatePresence>
@@ -246,20 +149,6 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
                       </div>
                     </motion.div>
                   </AnimatePresence>
-
-                  <div className="mt-4 flex justify-center">
-                    <motion.button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleExpand(index);
-                      }}
-                      className="text-orange hover:text-orange-800 font-medium"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {expandedJob === index ? 'Show Less' : 'Show More'}
-                    </motion.button>
-                  </div>
                 </motion.div>
               </div>
             </div>
