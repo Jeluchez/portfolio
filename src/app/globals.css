@@ -16,9 +16,11 @@
 }
 @theme {
   --color-lilac: #EFECF3;
-  --color-orange: #fdbb21;
+  --color-orange: rgb(253,188,37);
+  --color-orange-800: rgb(253,188,37,0.8);;
   --color-gold: #F0E8E1;
-  --color-purple: rgba(183,116,240)
+  --color-purple: rgba(183,116,240);
+  --color-purple-800: rgba(183,116,240,0.2);
   --color-pale-lilac: rgb(243,239,247);
   --color-pale-lilac-800: rgb(243,239,247,.8);
   --color-pale-lilac-400: rgb(243,239,247,.4);

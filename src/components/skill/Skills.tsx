@@ -59,7 +59,7 @@ export const Skills = () => {
     'Tailwind': '-mt-16'
   };
   return (
-    <div className=" w-full  max-w-lg mx-auto p-4 pb-8 sm:p-8  relative z-1">
+    <div className=" w-full  max-w-lg mx-auto p-4 pb-8 sm:p-8 sm:pb-32 relative z-1">
       <h2 className="text-xl md:text-3xl font-bold font-heading text-theme-heading transition-colors">
       My Skills 💻</h2>
       <div className='mt-8 flex space-y-16 flex-wrap justify-center items-center'>

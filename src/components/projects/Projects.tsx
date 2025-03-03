@@ -7,13 +7,13 @@ const projects = [
   },
   {
     title: 'Tickets app',
-    description: 'a Nextjs application for selling tickets to the beaches',
+    description: 'A Nextjs application for selling tickets to the beaches',
     githubUrl: 'https://github.com/Jeluchez/ticket-frontend',
     tools: ['Typescript', 'Nextjs', 'MUI']
   },
   {
     title: 'Spotify app',
-    description: 'a client application of a spotify API',
+    description: 'A client application of a spotify API',
     githubUrl: 'https://github.com/Jeluchez/spotify-app',
     tools: ['Typescript', 'React', 'sass']
   }
