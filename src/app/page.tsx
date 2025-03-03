@@ -15,12 +15,12 @@ export default function Home() {
   const careerY = useTransform(scrollYProgress, [0.5, 0.7], [100, 0]);
   return (
     // <div className="wrapper  min-h-screen overflow-hidden bg-gradient-to-b from-orange from-10% via-gold via-20%  to-lilac to-90% ">
-    <div className="wrapper  min-h-screen overflow-hidden bg-lilac flex flex-col text-lg">
+    <div className="wrapper  min-h-screen overflow-hidden bg-lilac dark:bg-dark-purple flex flex-col text-lg">
       <div className="w-full max-w-lg mx-auto relative z-2 h-[var(--h-header)]">
         <Header/>
       </div>
       {/* <main className='flex-1'> */}
-      <div className='overlays w-full h-[550px] top-0 overflow-hidden absolute'>
+      <div className='overlays w-full h-[500px] top-0 overflow-hidden absolute'>
         <div className="gradient-overlay1"></div>
         <div className="gradient-overlay2"></div>
       </div>

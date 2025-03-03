@@ -24,9 +24,9 @@ export default function GithubGrid() {
     <div className="max-w-5xl mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {projects.map((project, index) => (
-          <div key={index} className="p-6 bg-white-400 shadow-lg rounded-xl text-left">
-            <a href={project.githubUrl}><h3 className="text-lg font-semibold text-gray-800">{project.title}</h3></a>
-            <p className="text-gray-600 mt-2">{project.description}</p>
+          <div key={index} className="p-6 bg-white-400 dark:bg-black-400 shadow-lg rounded-xl text-left">
+            <a href={project.githubUrl}><h3 className="text-lg font-semibold text-gray-800 dark:text-light-white ">{project.title}</h3></a>
+            <p className="text-gray-400 mt-2">{project.description}</p>
             <div className="mt-4 flex space-x-1">
               {
                 project?.tools?.map((title) => (

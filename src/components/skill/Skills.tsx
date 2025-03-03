@@ -26,7 +26,7 @@ export const Skills = () => {
     },
     {
       icon: Sql,
-      title: 'Sql'
+      title: 'Sql / NoSql '
     },
     {
       icon: Aws,
@@ -65,7 +65,7 @@ export const Skills = () => {
       <div className='mt-8 flex space-y-16 flex-wrap justify-center items-center'>
         {items.map(({ icon: Icon,title }, index) => (
           <div key={index} className={`flex flex-col w-1/6 ${margin[title]} items-center`}>
-            <Icon className='w-14 h-14'/>
+            <Icon className='w-14 h-14 fill-black dark:fill-white-400 hover:fill-orange hover:dark:fill-purple'/>
             <span className='text-sm block mt-1'>{title}</span>
           </div>
         ))}

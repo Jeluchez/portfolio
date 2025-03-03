@@ -1,40 +1,26 @@
-import { useState, useEffect } from 'react';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
+import { useTheme } from 'next-themes';
 
 
 
 export const ThemeToggle = () => {
-  const [theme, setTheme] = useState(() =>
-    typeof window !== 'undefined'
-      ? localStorage.getItem('theme') || 'light'
-      : 'light'
-  );
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
+  const { theme, setTheme } = useTheme();
   return (
     <button
-      className="h-6 w-12 bg-gold dark:bg-purple rounded-full flex items-center px-1 transition-all duration-300"
+      className="transition-all duration-300 cursor-pointer"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       aria-label="Toggle Theme"
     >
-      <span className={`flex items-center justify-center w-6 h-6 bg-white dark:bg-orange rounded-full shadow-md transform transition-transform duration-300 ${
-        theme === 'dark' ? 'translate-x-4' : 'translate-x-0'
-      }`}>
-        {
-          theme === 'light'
-            ? (
-              <SunIcon className="w-4 h-4 text-purple dark:text-orange transition-all" />
-            )
-            :
-            (
-              <MoonIcon className="w-4 h-4 text-purple dark:text-orange transition-all" />
-            )
-        }
-      </span>
+      {
+        theme === 'light'
+          ? (
+            <SunIcon className="w-6 h-6 text-black transition-all" />
+          )
+          :
+          (
+            <MoonIcon className="w-5 h-5 text-white transition-all" />
+          )
+      }
     </button>
   );
 };

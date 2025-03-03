@@ -2,7 +2,7 @@
 import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
-import { bulletVariants, cardVariants, containerVariants, detailsVariants, lineVariants, listItemVariants, techBadgeVariants } from '@/constants/animationVariants';
+import { cardVariants, containerVariants, detailsVariants, lineVariants, listItemVariants, techBadgeVariants } from '@/constants/animationVariants';
 
 interface Job {
   company: string;
@@ -35,7 +35,8 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
     >
-      <h2 className="text-3xl font-bold text-gray-900 mb-8">Career History</h2>
+      <h2 className="text-xl md:text-3xl font-bold font-heading text-theme-heading transition-colors mb-8">
+      Career History</h2>
 
       <div className="space-y-12">
         {careerData.map((job, index) => (
@@ -51,7 +52,7 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
             {/* Timeline line */}
             {index < careerData.length - 1 && (
               <motion.div
-                className="absolute left-7 top-8 w-0.5 bg-purple-800 z-0"
+                className="absolute left-7 top-8 w-0.5 bg-purple-800  z-0"
                 variants={lineVariants}
                 initial="hidden"
                 animate="visible"
@@ -60,19 +61,14 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
 
             <div className="flex gap-4">
               {/* Timeline dot */}
-              <motion.div
+              <div
                 className="mt-1.5 flex-shrink-0 w-4 h-4 rounded-full bg-orange z-10"
-                variants={bulletVariants}
-                initial="initial"
-                animate="animate"
-                whileHover="hover"
               />
-
               {/* Content */}
               <div className="flex-1">
                 <motion.div
                   onClick={() => toggleExpand(index)}
-                  className="cursor-pointer bg-white-400 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+                  className="cursor-pointer bg-white-400  dark:bg-black-400 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
                   whileHover={{
                     boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
                   }}
@@ -81,7 +77,7 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
                   <div className="sm:flex sm:justify-between sm:items-start">
                     <div>
                       <div className='flex'>
-                        <h3 className="text-xl font-semibold text-gray-900 mr-1">{job.title}</h3>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-light-white mr-1">{job.title}</h3>
                         <p className='mt-2 sm:mt-0 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium tag'>{job.period}</p>
                       </div>
                       <p className="text-lg text-orange mt-1">{/*job.company*/} {job.client}</p>
@@ -123,7 +119,7 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
                                 animate={{ scale: 1 }}
                                 transition={{ delay: 0.2 + idx * 0.1 }}
                               />
-                              <span className="text-gray-700">{responsibility}</span>
+                              <span className="text-gray-700 dark:text-gray-400">{responsibility}</span>
                             </motion.li>
                           ))}
                         </ul>

@@ -41,23 +41,6 @@ export const lineVariants: Variants = {
   }
 };
 
-export const bulletVariants: Variants = {
-  initial: { scale: 0 },
-  animate: {
-    scale: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 300,
-      damping: 10
-    }
-  },
-  hover: {
-    scale: 1.2,
-    backgroundColor: '#FF7D00', // Orange color from your theme
-    transition: { duration: 0.2 }
-  }
-};
-
 export const detailsVariants: Variants = {
   collapsed: {
     height: 0,
