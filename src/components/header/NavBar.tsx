@@ -3,8 +3,8 @@ const menuOptions = ['About', 'Skills', 'Projects', 'Experience'];
 
 export const NavBar = () => {
   return (
-    <nav className="wrapper py-4 ml-4" aria-label="Main Navigation">
-      <ul className="navbar flex justify-between items-center gap-6" role="menu">
+    <nav className="wrapper py-4" aria-label="Main Navigation">
+      <ul className="navbar flex  items-center gap-6" role="menu">
         {menuOptions.map((item) => (
           <li key={item} role="menuitem">
             <a

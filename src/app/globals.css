@@ -1,13 +1,111 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
+:root {
+  --color-lilac: #EFECF3;
+  --color-lilac-rgb: 183,116,240;
+  --color-orange: #fdbb21;
+  --color-green: rgb(84,180,193,1);
+  --color-purple: rgba(183,116,240);
+  --color-gold: #F0E8E1;
+  --color-black: #333333;
+  --color-light-white: #f7f7f7;
+  --h-header: 100px;
+}
+@layer base {
+  :root {
+    --transition-default: all 0.3s ease-in-out;
+  }
+  html {
+    @apply text-black dark:text-light-white;
+  }
+}
 @theme {
   --color-lilac: #EFECF3;
+  --color-orange: rgb(253,188,37);
+  --color-orange-800: rgb(253,188,37,0.8);
+  --color-green: rgb(84,180,193,1);
   --color-gold: #F0E8E1;
-  --color-purple: #B774F0;
+  --color-purple: rgba(183,116,240);
+  --color-purple-800: rgba(183,116,240,0.2);
+  --color-pale-lilac: rgb(243,239,247);
+  --color-pale-lilac-800: rgb(243,239,247,.8);
+  --color-pale-lilac-400: rgb(243,239,247,.4);
+  --color-white-400: rgb(255,255,255,.4);
+  --color-surface-0: #ECE9F1;
+  --color-surface-3: #F4F2F7;
+  --color-surface-2: #F1EFF5;
+  --color-surface-0-dark: #1A1523; 
+  --color-surface-2-dark: #242030; 
+  --color-surface-3-dark: #2E2940; 
+  --color-light-white: #f7f7f7;
+  --color-black: #333333;
+  --color-black-400: rgba(51, 51, 51, .4);
+  --color-dark-purple:rgb(11,18,28);
+  
+
 
   --container-sm: 40rem;/*640px;*/
   --container-md: 48rem;/*768px;*/
   --container-lg: 64rem;/*1024px;*/
   --container-xl: 80rem;/*1280px;*/
+}
+.gradient-overlay1 {
+  position: absolute;
+  inset: 0; 
+  pointer-events: none;
+  background: linear-gradient(to bottom, var(--color-orange) 96%, transparent 4%);
+  filter: blur(50px);
+  top: -200px;
+  transform: scale(200%, 150%);
+  animation: expandRetract 6s linear infinite;
+  opacity: 0.2;
+}
+.dark .gradient-overlay1{
+  background: linear-gradient(to bottom, var(--color-purple) 96%, transparent 4%);
+}
 
+.gradient-overlay2 {
+  position: absolute;
+  inset: 0; 
+  pointer-events: none;
+  background-color: var(--color-purple);
+  filter: blur(40px);
+  top: -200px;
+  transform: scale(200%, 150%);
+  opacity: 0.1;
+  animation: expandRetract 9s linear infinite;
+  animation-fill-mode: both;
+  transition: opacity 2s, width 2s, height 2s;  
+}
+.dark .gradient-overlay2{
+  @apply bg-green;
+}
+@keyframes expandRetract {
+  0%,100% {
+    height: 380px
+  }
+  50% {
+    height: 100%
+  }
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  color: hsla(272deg 81% calc(82% - 12%) / 1);
+  background-color: rgba(var(--color-lilac-rgb), .1);
+  border-color: hsla(var(--h-primary) var(--s-primary) var(--l-primary) / 1);
+  border-radius: 4rem;
+  cursor: pointer;
+}
+.floating-arrow {
+  animation: float 0.8s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
