@@ -30,10 +30,10 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
   return (
     <motion.div
       ref={containerRef}
-      className="w-full max-w-lg mx-auto sm:p-8 sm:pb-32"
+      className="w-full max-w-lg mx-auto px-4 pb-32 sm:p-8 sm:pb-32 "
       variants={containerVariants}
       initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
+      animate={isInView && 'visible'}
     >
       <h2 className="text-xl md:text-3xl font-bold font-heading text-theme-heading transition-colors mb-8">
       Career History</h2>
@@ -52,7 +52,7 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
             {/* Timeline line */}
             {index < careerData.length - 1 && (
               <motion.div
-                className="absolute left-7 top-8 w-0.5 bg-purple-800  z-0"
+                className="absolute left-7 top-8 w-0.5 bg-purple-800  z-0 hidden sm:block"
                 variants={lineVariants}
                 initial="hidden"
                 animate="visible"
@@ -62,7 +62,7 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
             <div className="flex gap-4">
               {/* Timeline dot */}
               <div
-                className="mt-1.5 flex-shrink-0 w-4 h-4 rounded-full bg-orange z-10"
+                className="mt-1.5 flex-shrink-0 w-4 h-4 rounded-full bg-orange z-10 hidden sm:block"
               />
               {/* Content */}
               <div className="flex-1">
@@ -76,24 +76,28 @@ export const CareerHistory2: React.FC<CareerHistoryProps> = ({ careerData }) => 
                 >
                   <div className="sm:flex sm:justify-between sm:items-start">
                     <div>
-                      <div className='flex'>
+                      <div className='flex flex-wrap'>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-light-white mr-1">{job.title}</h3>
                         <p className='mt-2 sm:mt-0 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium tag'>{job.period}</p>
                       </div>
                       <p className="text-lg text-orange mt-1">{/*job.company*/} {job.client}</p>
                       {/* <p className="text-gray-600 mt-1">{job.location}</p> */}
                     </div>
-                    <motion.button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleExpand(index);
-                      }}
-                      className="w-6 h-6"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {expandedJob === index ? <ChevronDownIcon/> : <ChevronUpIcon />}
-                    </motion.button>
+
+                    <div className='flex justify-center pt-2'>
+
+                      <motion.button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleExpand(index);
+                        }}
+                        className="w-6 h-6"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {expandedJob === index ? <ChevronDownIcon/> : <ChevronUpIcon />}
+                      </motion.button>
+                    </div>
                   </div>
 
                   <AnimatePresence>

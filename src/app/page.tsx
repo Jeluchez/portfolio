@@ -16,7 +16,7 @@ export default function Home() {
   return (
     // <div className="wrapper  min-h-screen overflow-hidden bg-gradient-to-b from-orange from-10% via-gold via-20%  to-lilac to-90% ">
     <div className="wrapper  min-h-screen overflow-hidden bg-lilac dark:bg-dark-purple flex flex-col text-lg">
-      <div className="w-full max-w-lg mx-auto relative z-2 h-[var(--h-header)]">
+      <div className="w-full max-w-lg mx-auto relative z-2 h-[var(--h-header)] px-4 sm:px-0">
         <Header/>
       </div>
       {/* <main className='flex-1'> */}
@@ -37,6 +37,7 @@ export default function Home() {
           alt="icon"
           width={300}
           height={300}
+          className="w-56 sm:w-auto"
         />
 
         <ChevronDownIcon className='floating-arrow bottom-8 absolute w-6'/>
@@ -45,8 +46,8 @@ export default function Home() {
 
       {/* about me */}
 
-      <div className=" w-full  max-w-lg mx-auto p-4 pb-32 relative z-1 flex">
-        <div className='flex-2/3'>
+      <div className=" w-full  max-w-lg mx-auto p-4 pb-32 relative z-1 flex px-4">
+        <div className='sm:flex-2/3'>
           <h2 className="text-xl md:text-3xl font-bold font-heading text-theme-heading transition-colors">
           About me 🤷🏾‍♂️</h2>
           <p className="text-md text-theme-text md:text-lg my-6">I am a full stack software engineer working with JavaScript and on all-things-web. I passionate to create applications user-centric. I am currently based in Buenaventura, Colombia (🇨🇴).
@@ -61,13 +62,13 @@ export default function Home() {
             alt="about me"
             width={700}
             height={600}
-            className="[clip-path:ellipse(100%_50%_at_center)]"
+            className="[clip-path:ellipse(100%_50%_at_center)] hidden sm:block"
           />
         </div>
       </div>
 
       {/* projects */}
-      <div className=" w-full  max-w-lg mx-auto sm:p-8 sm:pb-32 relative z-1 flex">
+      <div className=" w-full  max-w-lg mx-auto px-4 pb-32 sm:p-8 sm:pb-32 relative z-1 flex">
         <div className='flex-2/3'>
           <h2 className="text-xl md:text-3xl font-bold font-heading text-theme-heading transition-colors mb-8">
           Recent projects 🧰</h2>
@@ -76,9 +77,6 @@ export default function Home() {
       </div>
 
 
-
-      {/* skill */}
-      <Skills/>
       {/* Experience */}
       <motion.div
         style={{
@@ -88,6 +86,9 @@ export default function Home() {
       >
         <CareerHistory2 careerData={careerData} />
       </motion.div>
+      {/* skill */}
+      <Skills/>
+
       <Footer/>
     </div>
 
