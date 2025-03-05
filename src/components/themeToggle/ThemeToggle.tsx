@@ -14,11 +14,11 @@ export const ThemeToggle = () => {
       {
         theme === 'light'
           ? (
-            <SunIcon className="w-6 h-6 text-black transition-all" />
+            <SunIcon className="w-6 h-6 text-black transition-all hover:text-surface-3" />
           )
           :
           (
-            <MoonIcon className="w-5 h-5 text-white transition-all" />
+            <MoonIcon className="w-5 h-5 text-white transition-all  hover:text-purple " />
           )
       }
     </button>
