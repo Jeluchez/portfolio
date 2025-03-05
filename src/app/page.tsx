@@ -37,7 +37,7 @@ export default function Home() {
           alt="icon"
           width={300}
           height={300}
-          className="w-56 sm:w-300"
+          className="w-56 sm:w-[300px]"
         />
 
         <ChevronDownIcon className='floating-arrow bottom-8 absolute w-6'/>
