@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import ThemeProvider from '@/theme/themeProvider';
 
+export const runtime = 'edge';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
